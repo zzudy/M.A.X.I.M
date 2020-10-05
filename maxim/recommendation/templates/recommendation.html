@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="kr"> 
+    <head> 
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>RECOMMEND</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" media="screen" href="{% static 'recommendation/hello.css' %}">
+        <script src="main.js"></script>
+    </head>
+
+    <body>
+        <div class="jumbotron">
+            <h1 class="display-3">RECOMMEND</h1>
+            <p class="lead">FIND YOUR CLASS!</p>
+            {%for class in rcmd_class%}
+            <h3>{{class.classList}}</h3>
+            {%endfor%}
+            <form name="input" method="POST" action="{%url 'result'%}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="button" value="see detail?"></form>
+        </div>
+    </body>
+</html>

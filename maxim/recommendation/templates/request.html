@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="kr"> 
+    <head> 
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>REQUEST</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" media="screen" href="{% static 'recommendation/hello.css' %}">
+        <script src="main.js"></script>
+    </head>
+
+    <body>
+        <div class="jumbotron">
+            <h1 class="display-3">Request FORM</h1>
+            <p class="lead">Plz input your request</p>
+            
+            <p class="lead">
+            <form name="input" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="button" value="save request"></form>
+            <a href = "{%url 'recommendation'%}">Get List!</a>
+            </p>
+        </div>
+        
+    </body>
+</html>

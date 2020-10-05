@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="kr"> 
+    <head> 
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>RESULT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" media="screen" href="{% static 'recommendation/hello.css' %}">
+        <script src="main.js"></script>
+    </head>
+
+    <body>
+        <div class="jumbotron">
+        {%for class in class_dscp%}
+        <h2>Class description of {{class.subject}}<br> 
+        <h4>{{class.subject}} level : {{class.level}}</h4></h2> 
+        <p>{{class.subject}} teacher career : {{class.teacherCareer}}</p>
+        <p>{{class.subject}} starts at {{class.classHour}}.</p>
+        <p>{{class.subject}} tuition : {{class.tuition}}</p>
+        {%endfor%}
+        <br>
+
+        <h2>Academy detail</h2>
+        {%for aca in my_aca %}
+        <p>name of academy : {{aca.name}}</p>
+        <p>location of academy : {{aca.location}}</p>
+        <p>for more detail information call here -> {{aca.number}}</p>
+        <p>You can call this {{aca.name}} from {{aca.office_hour}}</p>
+        {%endfor%}
+
+        <br>
+
+        <h2>Do you like this class?</h2>
+        {%for classes in my_class%}
+        <p>{{classes.like}} people like this class.</p>
+        {%endfor%}  
+        </div>
+    </body>
+</html>

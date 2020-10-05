@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="kr"> 
+    <head> 
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>MAXIM HOME</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" media="screen" href="{% static 'recommendation/hello.css' %}">
+        <script src="main.js"></script>
+    </head>
+
+    <body>
+        <div class="jumbotron">
+            <h1 class="display-3">MAXIM</h1>
+            <p class="lead">Find your academy</p>
+            <p class="lead">
+            <a class="btn btn-warning" href="{% url 'request' %}" role="button">Get Recommendation!</a>
+            </p>
+        </div>
+
+            <ul class="list-group list-group-flush">
+            </ul>
+            <div class="card-body">
+                <blockquote class="blockquote">
+                    <p class="mb-0">Do you want to know more about us?</p>
+                </blockquote>
+            <a href="#" class="card-link">pyramid</a>
+            </div>
+            <div class="card-footer text-muted">
+            2019/06/08 Domain Analysis and Software Design
+            </div>
+        </div>
+    </body>
+</html>
